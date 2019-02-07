@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ calendar.name }}
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:{{ calendar.description }}
+{% for event in eventsScheduleNextIcs() %}
+BEGIN:VEVENT
+DTSTART:{{ event.start }}
+DTEND:{{ event.end }}
+UID:{{ event.id }}
+DTSTAMP:{{ event.timestamp }}
+LOCATION:{{ event.location }}
+DESCRIPTION:{{ event.description }}
+URL;VALUE=URI:{{ event.url }}
+SUMMARY:{{ event.summary }}
+END:VEVENT
+{% endfor %}
+END:VCALENDAR
