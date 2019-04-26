@@ -2,21 +2,31 @@
 
 Produce an ICS / iCal file for a list of events.
 
-Currently, this plugin is too tightly integrated with the [Events Schedule](https://github.com/aoloe/grav-plugin-events-schedule) plugin. (Pull) Request for separating them are welcome.
+Currently, this plugin is too tightly integrated with the [Events Schedule](https://github.com/aoloe/grav-plugin-events-schedule) plugin. (Pull) Requests for separating them are welcome.
 
-The **Events Ics** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Publish events as an ICS file
+The **Events Ics** Plugin is for [Grav CMS](http://github.com/getgrav/grav). It publishes events as an ICS file
+
+## Status
+
+This plugin is not yet in production and it still contains code that is tightly bound to the project that first needed it.
+
+It contains very little code and it should be easy for other users to fork it and adapt to their needs or, even better, make pull requests to make it more configurable.
+
+There are issues in the Github issue tracker that hint to the code that needs to be made more _flexible_.
 
 ## Installation
 
-Installing the Events Ics plugin can be done in one of two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
+Installing the Events Ics plugin can be done in one of two ways. ~~The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command~~, while the manual method enables you to do so via a zip file.
 
-### GPM Installation (Preferred)
+Currently, you need to first install the [Events Schedule Plugin](https://github.com/aoloe/grav-plugin-events-schedule).
 
-The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line).  From the root of your Grav install type:
+### ~~GPM Installation (Preferred)~~
+
+~~The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line).  From the root of your Grav install type:~~
 
     bin/gpm install events-ics
 
-This will install the Events Ics plugin into your `/user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/events-ics`.
+~~This will install the Events Ics plugin into your `/user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/events-ics`.~~
 
 ### Manual Installation
 
