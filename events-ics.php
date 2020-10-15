@@ -2,8 +2,8 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
+use Grav\Common\Grav;
 use Grav\Common\Page\Page;
-use RocketTheme\Toolbox\Event\Event;
 
 /**
  * Class EventsIcsPlugin
@@ -14,8 +14,8 @@ class EventsIcsPlugin extends Plugin
 
     private $calendar = [];
     private $default = [
-        'name' => 'Trainings beim BC-Oberurdorf',
-        'description' => 'Trainings beim BC-Oberurdorf',
+        'name' => 'Calendar name',
+        'description' => 'Calendar description',
     ];
 
     public static function getSubscribedEvents()
@@ -55,6 +55,10 @@ class EventsIcsPlugin extends Plugin
 
     public function onPageInitialized()
     {
+        $config = Grav::instance()['config']->get('plugins.events-ics');
+        if ($config && array_key_exists('default', $config)) {
+            $this->default = $config['default'] + $this->default;
+        }
         $this->calendar = $this->default;
 
         $page = new Page;

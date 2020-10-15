@@ -6,7 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:{{ calendar.name }}
 X-WR-TIMEZONE:UTC
 X-WR-CALDESC:{{ calendar.description }}
-{% for event in eventsScheduleNextIcs() %}
+{% for event in eventsScheduleNextIcs(calendar) %}
 BEGIN:VEVENT
 DTSTART:{{ event.start }}
 DTEND:{{ event.end }}
